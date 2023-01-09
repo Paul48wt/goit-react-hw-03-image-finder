@@ -10,7 +10,10 @@ export class ImageGalleryItem extends Component {
   };
 
   async componentDidUpdate(prevProps, prevState) {
-    if (prevProps.searchQuery !== this.props.searchQuery) {
+    if (
+      prevProps.searchQuery !== this.props.searchQuery ||
+      prevState.page !== this.props.page
+    ) {
       this.setState({ status: 'pending' });
 
       try {

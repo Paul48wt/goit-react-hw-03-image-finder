@@ -1,22 +1,14 @@
-import { Component } from 'react';
+export const LoadMoreButton = ({ onClick }) => {
+  // loadMore = () => {
+  //   this.setState(prevState => ({
+  //     page: prevState.page + 1,
+  //   }));
+  //   this.props.onClick(this.state.page);
+  // };
 
-export class Button extends Component {
-  state = {
-    page: 1,
-  };
-
-  loadMore = () => {
-    this.setState(prevState => ({
-      page: prevState.page + 1,
-    }));
-    this.props.onClick(this.state.page);
-  };
-
-  render() {
-    return (
-      <button type="button" className="Button" onClick={this.loadMore}>
-        Load more
-      </button>
-    );
-  }
-}
+  return (
+    <button type="button" className="Button" onClick={onClick}>
+      Load more
+    </button>
+  );
+};

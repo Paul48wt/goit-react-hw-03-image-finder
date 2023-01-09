@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { ToastContainer } from 'react-toastify';
-import { Button } from './Button/Button';
+import { LoadMoreButton } from './Button/Button';
 
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { Modal } from './Modal/Modal';
@@ -25,8 +25,10 @@ export class App extends Component {
     this.setState({ url: data });
   };
 
-  loadMoreHandler = data => {
-    this.setState({ page: data });
+  loadMoreHandler = () => {
+    this.setState(prevState => ({
+      page: prevState.page + 1,
+    }));
   };
 
   render() {
@@ -39,7 +41,8 @@ export class App extends Component {
           onImageClick={this.imageForModalHandler}
           page={this.state.page}
         />
-        <Button onClick={this.loadMoreHandler} />
+
+        <LoadMoreButton onClick={this.loadMoreHandler} />
         {this.state.showModal && (
           <Modal onClose={this.toggleModal}>
             <img src={this.state.url} alt="" />
