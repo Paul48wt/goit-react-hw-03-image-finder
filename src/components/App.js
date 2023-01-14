@@ -56,7 +56,16 @@ export class App extends Component {
         }));
       } catch (error) {}
     }
+    this.scroll();
   }
+
+  scroll = () => {
+    window.scrollTo(
+      0,
+      document.body.scrollHeight || document.documentElement.scrollHeight
+    );
+  };
+
   render() {
     const { images, showModal, url, status, hits } = this.state;
 
