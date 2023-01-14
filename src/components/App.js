@@ -32,6 +32,7 @@ export class App extends Component {
   loadMoreHandler = () => {
     this.setState(prevState => ({
       page: prevState.page + 1,
+      hits: 1,
     }));
   };
 
@@ -72,6 +73,7 @@ export class App extends Component {
         ) : (
           ''
         )}
+
         <div className="ButtonContainer">
           {hits === 12 ? <LoadMoreButton onClick={this.loadMoreHandler} /> : ''}
         </div>
