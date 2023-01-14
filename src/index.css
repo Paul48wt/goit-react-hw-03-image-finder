@@ -148,6 +148,7 @@ img {
   list-style: none;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 16px;
 }
 
 /*
@@ -221,7 +222,12 @@ img {
 .Button:focus {
   background-color: #303f9f;
 }
-
+.ButtonContainer {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 .Loader {
   position: absolute;
   left: 50%;

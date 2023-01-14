@@ -5,12 +5,15 @@ export class ImageGallery extends Component {
   render() {
     return (
       <ul className="ImageGallery">
-        <ImageGalleryItem
-          searchQuery={this.props.searchQuery}
-          toggleModal={this.props.toggleModal}
-          onImageClick={this.props.onImageClick}
-          page={this.props.page}
-        />
+        {this.props.imagesArray &&
+          this.props.imagesArray.map(item => (
+            <ImageGalleryItem
+              image={item}
+              key={item.id}
+              toggleModal={this.props.toggleModal}
+              onImageClick={this.props.onImageClick}
+            />
+          ))}
       </ul>
     );
   }
